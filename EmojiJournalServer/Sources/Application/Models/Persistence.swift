@@ -12,7 +12,18 @@ import LoggerAPI
 
 class Persistence {
     static func setUP() {
-        let pool = PostgreSQLConnection.createPool(host: ProcessInfo.processInfo.environment["DBHOST"] ?? "localhost", port: 5432, options: [.databaseName("emojijournal"), .userName(ProcessInfo.processInfo.environment["DBUSER"] ?? "postgres"), .password(ProcessInfo.processInfo.environment["DBPASSWORD"] ?? "nil")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50, timeout: 10000))
+        let pool = PostgreSQLConnection.createPool(
+            host: ProcessInfo.processInfo.environment["DBHOST"] ?? "localhost",
+            port: 5432,
+            options: [.databaseName("emojijournal"),
+             .userName(ProcessInfo.processInfo.environment["DBUSER"]
+                ?? "postgres"),
+             .password(ProcessInfo.processInfo.environment["DBPASSWORD"]
+                ?? "nil"),
+            ],
+            poolOptions: ConnectionPoolOptions(initialCapacity: 10,
+                                               maxCapacity: 50, timeout: 10000)
+        )
         Database.default = Database(pool)
         
         do {

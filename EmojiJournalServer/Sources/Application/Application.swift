@@ -26,7 +26,7 @@ public class App {
         initializeEntryRoutes(app: self)
         //router.get("/entries", handler: helloWorldHandler)
         KituraOpenAPI.addEndpoints(to: router)
-        //Persistence.setUP()
+        Persistence.setUP()
         
     }
     
