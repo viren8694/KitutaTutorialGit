@@ -26,6 +26,7 @@ public class App {
         // Endpoints
         initializeHealthRoutes(app: self)
         initializeEntryRoutes(app: self)
+        initializeUserRoutes(app: self)
         //router.get("/entries", handler: helloWorldHandler)
         KituraOpenAPI.addEndpoints(to: router)
         Persistence.setUP()

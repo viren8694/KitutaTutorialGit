@@ -7,18 +7,22 @@
 
 import Foundation
 import CredentialsHTTP
+import SwiftKueryORM
 
-public struct UserAuth{
+public struct UserAuth: Model{
     public var id: String
     private var password: String
 }
 
 extension UserAuth: TypeSafeHTTPBasic {
     public static func verifyPassword(username: String, password: String, callback: @escaping (UserAuth?) -> Void) {
-        if let storedPassword = authenticate[username], storedPassword == password {
-            callback(UserAuth(id: username, password: password))
-            return
-        } else {
+        UserAuth.find(id: username){ userAuth, error in
+            if let userAuth = userAuth {
+                if password == userAuth.password {
+                    callback(userAuth)
+                    return
+                }
+            }
             callback(nil)
         }
     }

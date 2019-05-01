@@ -27,6 +27,17 @@ class Persistence {
         Database.default = Database(pool)
         
         do {
+            try UserAuth.createTableSync()
+        } catch let error {
+            if let requestError = error as? RequestError,
+                requestError.rawValue == RequestError.ormQueryError.rawValue {
+                    Log.info("Table \(UserAuth.tableName) already exits")
+            } else {
+                Log.error("Database connection Error:" + "\(error)")
+            }
+        }
+        
+        do {
             try JournalEntry.createTableSync()
         } catch let error {
             if let requestError = error as? RequestError, requestError.rawValue == RequestError.ormQueryError.rawValue {

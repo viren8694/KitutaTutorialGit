@@ -33,6 +33,7 @@
 
 /* Begin PBXBuildFile section */
 		2B51B11E2278FAF800EC9009 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51B11D2278FAF800EC9009 /* UserAuth.swift */; };
+		2B51B1222279DEB200EC9009 /* UserRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B51B1212279DEB200EC9009 /* UserRoutes.swift */; };
 		OBJ_1000 /* HeliumStreamLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_290 /* HeliumStreamLogger.swift */; };
 		OBJ_1002 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "LoggerAPI::LoggerAPI::Product" /* LoggerAPI.framework */; };
 		OBJ_1009 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_291 /* Package.swift */; };
@@ -2963,10 +2964,25 @@
 			remoteGlobalIDString = "Kitura-net::CHTTPParser";
 			remoteInfo = CHTTPParser;
 		};
+		2B51B11F2278FAF900EC9009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "EmojiJournalServer::ApplicationTests";
+			remoteInfo = ApplicationTests;
+		};
+		2B51B1202278FAF900EC9009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Kitura-WebSocket::KituraWebSocket";
+			remoteInfo = KituraWebSocket;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2B51B11D2278FAF800EC9009 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		2B51B1212279DEB200EC9009 /* UserRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoutes.swift; sourceTree = "<group>"; };
 		"CloudEnvironment::CloudEnvironment::Product" /* CloudEnvironment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CloudFoundryEnv::CloudFoundryEnv::Product" /* CloudFoundryEnv.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudFoundryEnv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Configuration::Configuration::Product" /* Configuration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Configuration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4074,6 +4090,7 @@
 			children = (
 				OBJ_16 /* EntryRoutes.swift */,
 				OBJ_17 /* HealthRoutes.swift */,
+				2B51B1212279DEB200EC9009 /* UserRoutes.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -7203,6 +7220,7 @@
 				OBJ_497 /* InitializationError.swift in Sources */,
 				2B51B11E2278FAF800EC9009 /* UserAuth.swift in Sources */,
 				OBJ_498 /* Metrics.swift in Sources */,
+				2B51B1222279DEB200EC9009 /* UserRoutes.swift in Sources */,
 				OBJ_499 /* JournalEntry.swift in Sources */,
 				OBJ_500 /* Persistence.swift in Sources */,
 				OBJ_501 /* EntryRoutes.swift in Sources */,
@@ -7464,7 +7482,7 @@
 		OBJ_1111 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Kitura-WebSocket::KituraWebSocket" /* KituraWebSocket */;
-			targetProxy = "Kitura-WebSocket::KituraWebSocket" /* KituraWebSocket */;
+			targetProxy = 2B51B1202278FAF900EC9009 /* PBXContainerItemProxy */;
 		};
 		OBJ_1139 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -9039,7 +9057,7 @@
 		OBJ_964 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "EmojiJournalServer::ApplicationTests" /* ApplicationTests */;
-			targetProxy = "EmojiJournalServer::ApplicationTests" /* ApplicationTests */;
+			targetProxy = 2B51B11F2278FAF900EC9009 /* PBXContainerItemProxy */;
 		};
 		OBJ_972 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
