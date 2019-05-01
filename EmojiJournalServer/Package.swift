@@ -12,10 +12,12 @@ let package = Package(
       .package(url: "https://github.com/IBM-swift/Kitura-OpenAPI.git", from: "1.1.1"),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-ORM", from: "0.3.1"),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL", from: "1.2.0"),
+      .package(url: "https://github.com/IBM-Swift/Kitura-CredentialsHTTP.git",
+               from: "2.1.0"),
     ],
     targets: [
       .target(name: "EmojiJournalServer", dependencies: [ .target(name: "Application"), "Kitura" , "HeliumLogger"]),
-      .target(name: "Application", dependencies: [ "Kitura", "CloudEnvironment","SwiftMetrics", "Health", "KituraOpenAPI", "SwiftKueryPostgreSQL", "SwiftKueryORM"
+      .target(name: "Application", dependencies: [ "Kitura", "CloudEnvironment","SwiftMetrics", "Health", "KituraOpenAPI", "SwiftKueryPostgreSQL", "SwiftKueryORM", "CredentialsHTTP"
       ]),
 
       .testTarget(name: "ApplicationTests" , dependencies: [.target(name: "Application"), "Kitura","HeliumLogger" ])

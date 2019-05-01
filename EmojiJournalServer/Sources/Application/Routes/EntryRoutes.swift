@@ -82,27 +82,27 @@ func getAllEntries(completion: @escaping ([JournalEntry]?, RequestError?) -> Voi
 //    completion(nil)
 //}
 
-func addEntry(entry: JournalEntry, completion: @escaping (JournalEntry?, RequestError?) -> Void) {
+func addEntry(user: UserAuth, entry: JournalEntry, completion: @escaping (JournalEntry?, RequestError?) -> Void) {
     var savedEntry = entry
     savedEntry.id = UUID().uuidString
     savedEntry.save(completion)
 }
 
-func getEntries(query: JournalEntryParams? , completion: @escaping ([JournalEntry]?, RequestError?) -> Void) -> Void {
+func getEntries(user: UserAuth, query: JournalEntryParams? , completion: @escaping ([JournalEntry]?, RequestError?) -> Void) -> Void {
     JournalEntry.findAll(matching: query, completion)
 }
 
-func deleteEntry(id: String, completion: @escaping (RequestError?) -> Void) {
+func deleteEntry(user: UserAuth, id: String, completion: @escaping (RequestError?) -> Void) {
     JournalEntry.delete(id: id, completion)
 
 }
 
-func modifyEntry(id: String,entry: JournalEntry, completion: @escaping (JournalEntry?, RequestError?) -> Void) {
+func modifyEntry(user: UserAuth, id: String,entry: JournalEntry, completion: @escaping (JournalEntry?, RequestError?) -> Void) {
     entry.update(id: id, completion)
 
 }
 
-func getOneEntry(id: String, completion: @escaping (JournalEntry? , RequestError? ) -> Void) {
+func getOneEntry(user: UserAuth, id: String, completion: @escaping (JournalEntry? , RequestError? ) -> Void) {
     JournalEntry.find(id: id, completion)
 }
 

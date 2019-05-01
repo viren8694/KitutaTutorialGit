@@ -1,4 +1,4 @@
 module agentcore {
-    umbrella "/Users/vxp039/Desktop/KituraTutorial/EmojiJournalServer/.build/checkouts/omr-agentcore/src/agentcore/include"
+    umbrella "/Users/vxp039/Desktop/KituraGit/KitutaTutorialGit/EmojiJournalServer/.build/checkouts/omr-agentcore/src/agentcore/include"
     export *
 }
